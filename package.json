@@ -1,0 +1,25 @@
+{
+  "name": "dmemblog",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tubalmartin/dmemblog.git"
+  },
+  "scripts": {},
+  "bugs": {
+    "url": "https://github.com/tubalmartin/dmemblog/issues"
+  },
+  "homepage": "https://github.com/tubalmartin/dmemblog#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.5",
+    "font-awesome": "^4.7.0",
+    "match-media": "^0.2.0"
+  }
+}

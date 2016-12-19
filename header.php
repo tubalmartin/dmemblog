@@ -19,6 +19,7 @@
           </span>
           <span class="site-name">De menú en menú</span>
           <span class="site-name-legend">Gastro &bull; Travel</span>
+          <span class="site-author">por <a href="<?php echo esc_url( get_permalink(7051) ) ?>">Cristina R. Bareño</a></span>
         </div>
 
         <?php if (has_nav_menu('primary')): ?>

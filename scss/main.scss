@@ -7,9 +7,6 @@ Version: 0.1
 // Own variables & overrides
 @import "variables";
 
-// Normalize
-@import "../node_modules/bootstrap/scss/normalize";
-
 // Font-Awesome
 @import "../node_modules/font-awesome/scss/font-awesome";
 
@@ -17,6 +14,9 @@ Version: 0.1
 @import
   "../node_modules/bootstrap/scss/variables",
   "../node_modules/bootstrap/scss/mixins",
+  "../node_modules/bootstrap/scss/normalize",
+  "../node_modules/bootstrap/scss/reboot",
+  "../node_modules/bootstrap/scss/type",
   "../node_modules/bootstrap/scss/utilities/align",
   "../node_modules/bootstrap/scss/utilities/borders",
   "../node_modules/bootstrap/scss/utilities/clearfix",

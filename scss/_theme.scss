@@ -2,10 +2,16 @@
 // GLOBAL
 // ------------------------
 
-html, body {
-  width: 100%;
-  height: 100%;
-  font-family: 'Open Sans', sans-serif;
+img {
+  @include img-fluid
+}
+
+figure {
+  @include img-fluid
+}
+
+.screen-reader-text {
+  @include sr-only
 }
 
 // ------------------------
@@ -14,6 +20,7 @@ html, body {
 
 .site-header {
   background-color: white;
+  margin-bottom: 2rem;
 }
 
 .site-name-wrapper {
@@ -25,7 +32,7 @@ html, body {
   .icons {
     font-size: 25px;
     position: absolute;
-    padding: 10px;
+    padding: 10px 15px;
     left: 0;
     top: 0;
     cursor: pointer;
@@ -40,10 +47,18 @@ html, body {
   }
   .site-name-legend {
     display: block;
-    font-size: 9px;
+    font-size: 10px;
+  }
+  .site-author {
+    display: block;
+    font-size: 8px;
+    margin-top: -12px;
+    text-align: right;
+    a {
+      color: #FFCDD2;
+    }
   }
 }
-  
 .primary-menu-wrapper {
   display: none;
   ul {
@@ -74,84 +89,86 @@ html, body {
   }
   .primary-menu-wrapper {
     display: block;
-    .menu-item {
-      padding-right: 40px;
-      position: relative;
-      border-top: 1px solid #eee;
-      > .item-link {
-        display: block;
-        a {
-          color: black;
+    .primary-menu {
+      .menu-item {
+        padding-right: 40px;
+        position: relative;
+        border-top: 1px solid #eee;
+        > .item-link {
           display: block;
-          padding: 10px;
-          max-width: 100%;
+          a {
+            color: black;
+            display: block;
+            padding: 10px;
+            max-width: 100%;
+            &:hover {
+              color: white;
+              background-color: $link-hover-color;
+            }
+          }
+        }
+        > .sub-menu-toggler {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 40px;
+          padding: 10px 0;
+          text-align: center;
+          cursor: pointer;
+          .fa-angle-up,
+          .fa-angle-right,
+          .fa-angle-down{
+            display:none;
+          }
           &:hover {
-            color: white;
-            background-color: #EF5350;
+            background-color: #FFCDD2;
           }
         }
-      }
-      > .sub-menu-toggler {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 40px;
-        padding: 10px 0;
-        text-align: center;
-        cursor: pointer;
-        .fa-angle-up,
-        .fa-angle-right,
-        .fa-angle-down{
-          display:none;
-        }
-        &:hover {
-          background-color: #FFF59D;
-        }
-      }
-      > .sub-menu {
-        margin-right: -40px;
-        display: none;
-        > .menu-item {
-          > .item-link{
-            padding-left: 20px;
-          }
-          > .sub-menu {
-            > .menu-item {
-              > .item-link {
-                padding-left: 40px;
+        > .sub-menu {
+          margin-right: -40px;
+          display: none;
+          > .menu-item {
+            > .item-link{
+              padding-left: 20px;
+            }
+            > .sub-menu {
+              > .menu-item {
+                > .item-link {
+                  padding-left: 40px;
+                }
               }
             }
           }
         }
-      }
-      &.open{
-        > .sub-menu {
-          display: block;
-        }
-      }
-      &.current-menu-item {
-        > .item-link {
-          a {
-            color: white;
-            background-color: #EF5350;
+        &.open{
+          > .sub-menu {
+            display: block;
           }
         }
-      }
-      &.menu-item-has-children{
-        > .item-link {
-          border-right: 1px solid #eee;
-        }
-        > .sub-menu-toggler {
-          .fa-angle-down {
-            display: inline-block;
+        &.current-menu-item {
+          > .item-link {
+            a {
+              color: white;
+              background-color: $link-hover-color;
+            }
           }
-          &.open {
-            background-color: #FFF59D;
-            .fa-angle-up{
+        }
+        &.menu-item-has-children{
+          > .item-link {
+            border-right: 1px solid #eee;
+          }
+          > .sub-menu-toggler {
+            .fa-angle-down {
               display: inline-block;
             }
-            .fa-angle-down{
-              display: none;
+            &.open {
+              background-color: #FFCDD2;
+              .fa-angle-up{
+                display: inline-block;
+              }
+              .fa-angle-down{
+                display: none;
+              }
             }
           }
         }
@@ -160,9 +177,11 @@ html, body {
   }
 }
 
-
-
 @include media-breakpoint-up(md) {
+  $primary-menu-link-v-padding: 12px;
+  $primary-menu-link-h-padding: 25px;
+  $sub-menu-toggler-right-position: $primary-menu-link-h-padding;
+
   .site-name-wrapper {
     color: black;
     background-color: white;
@@ -170,10 +189,17 @@ html, body {
       display: none;
     }
     .site-name {
-      font-size: 35px;
+      font-size: 40px;
     }
     .site-name-legend {
       font-size: 13px;
+    }
+    .site-author {
+      font-size: 10px;
+      margin-top: -16px;
+      a {
+        color: $link-color;
+      }
     }
   }
   .primary-menu-wrapper {
@@ -196,16 +222,26 @@ html, body {
         a {
           display: block;
           color: white;
-          padding: 15px;
+          padding: $primary-menu-link-v-padding $primary-menu-link-h-padding;
           &:hover {
-            background-color: #EF5350;
+            background-color: $link-hover-color;
+            position: relative;
+            z-index: 2;
+          }
+        }
+      }
+      &.current-menu-item {
+        > .item-link {
+          a {
+            color: white;
+            background-color: $link-hover-color;
           }
         }
       }
       &.menu-item-has-children {
         > .item-link {
           a {
-            padding: 15px 35px 15px 15px;
+            padding: $primary-menu-link-v-padding $primary-menu-link-h-padding + 20px $primary-menu-link-v-padding $primary-menu-link-h-padding;
           }
         }
       }
@@ -215,18 +251,20 @@ html, body {
         top: 0;
         left: auto;
         bottom: 0;
-        right: 15px;
+        right: $sub-menu-toggler-right-position;
         height: 16px;
         text-align: right;
         .fa-angle-up,
         .fa-angle-right,
         .fa-angle-down{
           display:none;
+          vertical-align: top;
         }
       }
       > .sub-menu {
         display:none;
         background-color: #333;
+        z-index: 9999;
         .menu-item {
           &.menu-item-has-children {
             > .sub-menu-toggler {
@@ -263,6 +301,78 @@ html, body {
                 top: 0;
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// ------------------------
+// SITE CONTENT
+// ------------------------
+
+.site-content {
+  .post {
+    margin-bottom: 2rem;
+    .entry-header {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1rem;
+      .entry-meta {
+        font-size: 0.8rem;
+      }
+      .entry-title {
+        font-family: "EB Garamond", serif;
+        a {
+          color: black;
+          &:hover {
+            text-decoration: none;
+            color: #999;
+          }
+        }
+      }
+    }
+    .entry-content {
+      .attachment-post-thumbnail {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .navigation.pagination {
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+    text-align: center;
+    .nav-links{
+      display: inline-block;
+      .page-numbers {
+        color: black;
+        display: inline-block;
+        padding: 5px 15px;
+        border: 1px solid #eee;
+        margin-bottom: 4px;
+        &.dots {
+          border: none;
+          &:hover {
+            background-color: inherit;
+            color: inherit;
+          }
+        }
+        &.current,
+        &:hover {
+          text-decoration: none;
+          background-color: $link-color;
+          color: white;
+        }
+        &.prev {
+          .fa {
+            margin-right: 5px;
+          }
+        }
+        &.next {
+          .fa {
+            margin-left: 5px;
           }
         }
       }

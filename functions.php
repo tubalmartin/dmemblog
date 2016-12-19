@@ -124,6 +124,7 @@ function dmem_fonts_url() {
     $font_families = array();
 
     $font_families[] = 'Homemade Apple';
+    $font_families[] = 'EB Garamond';
     $font_families[] = 'Open Sans:400,400i,700,700i';
 
     $query_args = array(
@@ -204,16 +205,12 @@ function dmem_widgets_init() {
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
 function dmem_excerpt_more( $link ) {
-    if ( is_admin() ) {
-        return $link;
-    }
-
     $link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
         esc_url( get_permalink( get_the_ID() ) ),
         /* translators: %s: Name of current post */
-        sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'dmem' ), get_the_title( get_the_ID() ) )
+        __( 'Continuar leyendo', 'dmem' )
     );
-    return ' &hellip; ' . $link;
+    return $link;
 }
 //add_filter( 'excerpt_more', 'dmem_excerpt_more' );
 
@@ -354,4 +351,9 @@ function dmem_dropdown_icon_to_menu_link( $item_output, $item, $depth, $args ) {
     return $item_output;
 }
 add_filter( 'walker_nav_menu_start_el', 'dmem_dropdown_icon_to_menu_link', 10, 4 );
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_parent_theme_file_path( '/inc/template-tags.php' );
 

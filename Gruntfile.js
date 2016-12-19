@@ -40,9 +40,6 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            options: {
-                livereload: true
-            },
             sass: {
                 files: ['scss/**/*.scss'],
                 tasks: ['sass']
@@ -50,9 +47,21 @@ module.exports = function (grunt) {
             uglify: {
                 files: ['js/**/*.js'],
                 tasks: ['uglify']
-            },
-            wp: {
-                files: ['**/*.php']
+            }
+        },
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src : [
+                        '**/*.php',
+                        'scripts.min.js',
+                        'style.css'
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    proxy: "demenuenmenu.com:8080"
+                }
             }
         }
     })
@@ -62,10 +71,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify')
     grunt.loadNpmTasks('grunt-contrib-watch')
     grunt.loadNpmTasks('grunt-sass')
+    grunt.loadNpmTasks('grunt-browser-sync')
 
     // Task definitions
     grunt.registerTask('build-dev', ['sass', 'uglify'])
     grunt.registerTask('build-prod', ['sass', 'cssmin', 'uglify'])
-    grunt.registerTask('dev', ['build-dev', 'watch'])
+    grunt.registerTask('dev', ['build-dev', 'browserSync', 'watch'])
     grunt.registerTask('default', ['dev'])
 }

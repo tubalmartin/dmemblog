@@ -353,6 +353,14 @@ function dmem_dropdown_icon_to_menu_link( $item_output, $item, $depth, $args ) {
 add_filter( 'walker_nav_menu_start_el', 'dmem_dropdown_icon_to_menu_link', 10, 4 );
 
 /**
+ * Limit number of post revisions
+ */
+function dmem_limit_revisions_to_keep( $num, $post ) {
+    return 20;
+}
+add_filter( 'wp_revisions_to_keep', 'dmem_limit_revisions_to_keep', 10, 2 );
+
+/**
  * Custom template tags for this theme.
  */
 require get_parent_theme_file_path( '/inc/template-tags.php' );

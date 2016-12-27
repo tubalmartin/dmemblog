@@ -47,12 +47,12 @@ figure {
   }
   .site-name-legend {
     display: block;
-    font-size: 10px;
+    font-size: 11px;
   }
   .site-author {
     display: block;
-    font-size: 8px;
-    margin-top: -12px;
+    font-size: 10px;
+    margin-top: -14px;
     text-align: right;
     a {
       color: #FFCDD2;
@@ -192,11 +192,11 @@ figure {
       font-size: 40px;
     }
     .site-name-legend {
-      font-size: 13px;
+      font-size: 14px;
     }
     .site-author {
-      font-size: 10px;
-      margin-top: -16px;
+      font-size: 12px;
+      margin-top: -18px;
       a {
         color: $link-color;
       }
@@ -322,6 +322,13 @@ figure {
       padding-bottom: 1rem;
       .entry-meta {
         font-size: 0.8rem;
+        .sponsored {
+          display: inline-block;
+          padding: 5px 10px;
+          margin-left: 10px;
+          background-color: $link-color;
+          color: white;
+        }
       }
       .entry-title {
         font-family: "EB Garamond", serif;

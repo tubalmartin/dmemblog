@@ -23,7 +23,7 @@
 					else:
 						echo dmem_time_link();
 					endif;
-					if (has_category(1309)):
+					if (has_category('patrocinados')):
             echo '<span class="sponsored">Patrocinado</span>';
           endif;
 				echo '</div><!-- .entry-meta -->';

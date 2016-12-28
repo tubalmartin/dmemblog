@@ -361,6 +361,15 @@ function dmem_limit_revisions_to_keep( $num, $post ) {
 add_filter( 'wp_revisions_to_keep', 'dmem_limit_revisions_to_keep', 10, 2 );
 
 /**
+ * Revv stylesheet URI for cache busting
+ */
+function dmem_revv_stylesheet_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
+    const $lastModified = filemtime(get_stylesheet_directory() . '/style.css');
+    return $stylesheet_dir_uri . '/style.' . $lastModified  . '.css';
+}
+add_filter( 'stylesheet_uri', 'dmem_revv_stylesheet_uri', 10, 2 );
+
+/**
  * Custom template tags for this theme.
  */
 require get_parent_theme_file_path( '/inc/template-tags.php' );

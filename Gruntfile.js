@@ -5,7 +5,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         cssmin: {
             options: {
-                keepSpecialComments: 0
+                keepSpecialComments: 1
             },
             wp: {
                 files: {
@@ -29,10 +29,22 @@ module.exports = function (grunt) {
                 }
             }
         },
+        concat: {
+            options: {
+                separator: ';'
+            },
+            scripts: {
+                src: [
+                    'node_modules/match-media/matchMedia.js',
+                    'js/main.js'
+                ],
+                dest: 'scripts.js'
+            }
+        },
         uglify: {
             wp: {
                 files: {
-                    'scripts.min.js': [
+                    'scripts.js': [
                         'node_modules/match-media/matchMedia.js',
                         'js/main.js'
                     ]
@@ -44,9 +56,9 @@ module.exports = function (grunt) {
                 files: ['scss/**/*.scss'],
                 tasks: ['sass']
             },
-            uglify: {
+            concat: {
                 files: ['js/**/*.js'],
-                tasks: ['uglify']
+                tasks: ['concat']
             }
         },
         browserSync: {
@@ -54,7 +66,7 @@ module.exports = function (grunt) {
                 bsFiles: {
                     src : [
                         '**/*.php',
-                        'scripts.min.js',
+                        'scripts.js',
                         'style.css'
                     ]
                 },
@@ -69,12 +81,13 @@ module.exports = function (grunt) {
     // Load plugins used by this task gruntfile
     grunt.loadNpmTasks('grunt-contrib-cssmin')
     grunt.loadNpmTasks('grunt-contrib-uglify')
+    grunt.loadNpmTasks('grunt-contrib-concat')
     grunt.loadNpmTasks('grunt-contrib-watch')
     grunt.loadNpmTasks('grunt-sass')
     grunt.loadNpmTasks('grunt-browser-sync')
 
     // Task definitions
-    grunt.registerTask('build-dev', ['sass', 'uglify'])
+    grunt.registerTask('build-dev', ['sass', 'concat'])
     grunt.registerTask('build-prod', ['sass', 'cssmin', 'uglify'])
     grunt.registerTask('dev', ['build-dev', 'browserSync', 'watch'])
     grunt.registerTask('default', ['dev'])

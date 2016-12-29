@@ -237,6 +237,16 @@ function dequeue_jquery_migrate( $scripts){
 add_filter( 'wp_default_scripts', 'dequeue_jquery_migrate' );
 
 /**
+ * Revv asset URI for cache busting
+ */
+function get_my_revved_asset_uri ( $filename, $fileext ) {
+    $dot = '.';
+    $templateDirUri = get_template_directory_uri();
+    $lastModified = filemtime($templateDirUri . '/'. $filename . $dot . $fileext);
+    return $templateDirUri . '/'. $filename . $dot . $lastModified  . $dot . $fileext;
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function dmem_scripts() {
@@ -244,7 +254,7 @@ function dmem_scripts() {
     wp_enqueue_style( 'dmem-fonts', dmem_fonts_url(), array(), null );
 
     // Theme stylesheet.
-    wp_enqueue_style( 'dmem-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'dmem-style', get_my_revved_asset_uri('style', 'css') );
 
     // Load the html5 shiv.
     //wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
@@ -259,7 +269,7 @@ function dmem_scripts() {
         $dmem_l10n['icon']           = dmem_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
     }*/
 
-    wp_enqueue_script( 'dmem-js', get_theme_file_uri( '/scripts.min.js' ), array( 'jquery' ), '1.0', true );
+    wp_enqueue_script( 'dmem-js', get_my_revved_asset_uri('scripts', 'js'), array( 'jquery' ), '1.0', true );
 
     //wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
 
@@ -359,15 +369,6 @@ function dmem_limit_revisions_to_keep( $num, $post ) {
     return 10;
 }
 add_filter( 'wp_revisions_to_keep', 'dmem_limit_revisions_to_keep', 10, 2 );
-
-/**
- * Revv stylesheet URI for cache busting
- */
-function dmem_revv_stylesheet_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
-    $lastModified = filemtime(get_stylesheet_directory() . '/style.css');
-    return $stylesheet_dir_uri . '/style.' . $lastModified  . '.css';
-}
-add_filter( 'stylesheet_uri', 'dmem_revv_stylesheet_uri', 10, 2 );
 
 /**
  * Custom template tags for this theme.

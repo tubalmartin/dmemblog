@@ -5,7 +5,9 @@
     "type": "git",
     "url": "git+https://github.com/tubalmartin/dmemblog.git"
   },
-  "scripts": {},
+  "scripts": {
+    "precommit": "grunt build-prod"
+  },
   "bugs": {
     "url": "https://github.com/tubalmartin/dmemblog/issues"
   },
@@ -13,10 +15,12 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-cssmin": "^1.0.2",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-sass": "^1.2.1"
+    "grunt-sass": "^1.2.1",
+    "husky": "^0.12.0"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.5",

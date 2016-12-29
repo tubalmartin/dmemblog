@@ -241,9 +241,8 @@ add_filter( 'wp_default_scripts', 'dequeue_jquery_migrate' );
  */
 function get_my_revved_asset_uri ( $filename, $fileext ) {
     $dot = '.';
-    $templateDir = get_template_directory();
-    $lastModified = filemtime($templateDir . '/'. $filename . $dot . $fileext);
-    return $templateDir . '/'. $filename . $dot . $lastModified  . $dot . $fileext;
+    $lastModified = filemtime(get_template_directory() . '/'. $filename . $dot . $fileext);
+    return get_template_directory_uri() . '/'. $filename . $dot . $lastModified  . $dot . $fileext;
 }
 
 /**

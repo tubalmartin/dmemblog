@@ -374,3 +374,11 @@ add_filter( 'wp_revisions_to_keep', 'dmem_limit_revisions_to_keep', 10, 2 );
  */
 require get_parent_theme_file_path( '/inc/template-tags.php' );
 
+/**
+ * Remove image srcset: fastest method!
+ */
+function remove_image_srcset() {
+    return [];
+}
+add_filter( 'wp_calculate_image_srcset_meta', 'remove_image_srcset' );
+

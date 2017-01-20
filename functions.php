@@ -253,7 +253,7 @@ function dmem_scripts() {
     wp_enqueue_style( 'dmem-fonts', dmem_fonts_url(), array(), null );
 
     // Theme stylesheet.
-    wp_enqueue_style( 'dmem-style', get_my_revved_asset_uri('style', 'css') );
+    wp_enqueue_style( 'dmem-style', get_my_revved_asset_uri('style', 'css'), array(), null );
 
     // Load the html5 shiv.
     //wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
@@ -268,7 +268,7 @@ function dmem_scripts() {
         $dmem_l10n['icon']           = dmem_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
     }*/
 
-    wp_enqueue_script( 'dmem-js', get_my_revved_asset_uri('scripts', 'js'), array( 'jquery' ), '1.0', true );
+    wp_enqueue_script( 'dmem-js', get_my_revved_asset_uri('scripts', 'js'), array( 'jquery' ), null, true );
 
     //wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
 

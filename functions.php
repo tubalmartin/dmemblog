@@ -382,3 +382,9 @@ function remove_image_srcset() {
 }
 add_filter( 'wp_calculate_image_srcset_meta', 'remove_image_srcset' );
 
+/*
+ * Remove Generator meta
+ */
+add_filter( 'the_generator', '__return_null' );
+
+

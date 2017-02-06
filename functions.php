@@ -387,4 +387,11 @@ add_filter( 'wp_calculate_image_srcset_meta', 'remove_image_srcset' );
  */
 add_filter( 'the_generator', '__return_null' );
 
+/**
+ * Remove hentry from post_class
+ */
+function remove_hentry_class( $classes ) {
+    return array_diff( $classes, array( 'hentry' ) );
+}
+add_filter( 'post_class', 'remove_hentry_class' );
 

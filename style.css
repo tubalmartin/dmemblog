@@ -3927,7 +3927,7 @@ figure {
 .primary-menu-open {
   overflow: hidden; }
   .primary-menu-open .site-header {
-    bottom: 0;
+    bottom: -200px;
     overflow: scroll;
     margin-bottom: 0; }
   .primary-menu-open .site-name-wrapper .icons .fa-bars {

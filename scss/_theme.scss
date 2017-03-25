@@ -88,7 +88,7 @@ figure {
   overflow: hidden;
   .site-header {
     @extend .pos-f-t;
-    bottom: 0;
+    bottom: -200px;
     overflow: scroll;
     margin-bottom: 0;
   }

@@ -87,9 +87,10 @@ figure {
 .primary-menu-open {
   overflow: hidden;
   .site-header {
-    height: 100%;
     @extend .pos-f-t;
-    overflow-y: scroll;
+    bottom: 0;
+    overflow: scroll;
+    margin-bottom: 0;
   }
   .site-name-wrapper {
     .icons {

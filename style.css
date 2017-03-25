@@ -3927,6 +3927,7 @@ figure {
 .primary-menu-open {
   overflow: hidden; }
   .primary-menu-open .site-header {
+    height: 100%;
     bottom: -200px;
     overflow: scroll;
     margin-bottom: 0; }

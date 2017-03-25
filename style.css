@@ -3924,67 +3924,67 @@ figure {
     text-overflow: ellipsis;
     white-space: nowrap; }
 
-.primary-menu-open .site-header {
-  height: 100%; }
-
-.primary-menu-open .site-name-wrapper .icons .fa-bars {
-  display: none; }
-
-.primary-menu-open .site-name-wrapper .icons .fa-close {
-  display: inline-block; }
-
-.primary-menu-open .primary-menu-wrapper {
-  display: block; }
-  .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item {
-    padding-right: 40px;
-    position: relative;
-    border-top: 1px solid #eee; }
-    .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .item-link {
-      display: block; }
-      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .item-link a {
-        color: black;
-        display: block;
-        padding: 10px;
-        max-width: 100%; }
-        .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .item-link a:hover {
-          color: white;
-          background-color: #EF5350; }
-    .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu-toggler {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 40px;
-      padding: 10px 0;
-      text-align: center;
-      cursor: pointer; }
-      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu-toggler .fa-angle-up,
-      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu-toggler .fa-angle-right,
-      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu-toggler .fa-angle-down {
+.primary-menu-open {
+  overflow: hidden; }
+  .primary-menu-open .site-header {
+    height: 100%;
+    overflow-y: scroll; }
+  .primary-menu-open .site-name-wrapper .icons .fa-bars {
+    display: none; }
+  .primary-menu-open .site-name-wrapper .icons .fa-close {
+    display: inline-block; }
+  .primary-menu-open .primary-menu-wrapper {
+    display: block; }
+    .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item {
+      padding-right: 40px;
+      position: relative;
+      border-top: 1px solid #eee; }
+      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .item-link {
+        display: block; }
+        .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .item-link a {
+          color: black;
+          display: block;
+          padding: 10px;
+          max-width: 100%; }
+          .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .item-link a:hover {
+            color: white;
+            background-color: #EF5350; }
+      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu-toggler {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        padding: 10px 0;
+        text-align: center;
+        cursor: pointer; }
+        .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu-toggler .fa-angle-up,
+        .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu-toggler .fa-angle-right,
+        .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu-toggler .fa-angle-down {
+          display: none; }
+        .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu-toggler:hover {
+          background-color: #FFCDD2; }
+      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu {
+        margin-right: -40px;
         display: none; }
-      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu-toggler:hover {
-        background-color: #FFCDD2; }
-    .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu {
-      margin-right: -40px;
-      display: none; }
-      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu > .menu-item > .item-link {
-        padding-left: 20px; }
-      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu > .menu-item > .sub-menu > .menu-item > .item-link {
-        padding-left: 40px; }
-    .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.open > .sub-menu {
-      display: block; }
-    .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.current-menu-item > .item-link a {
-      color: white;
-      background-color: #EF5350; }
-    .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.menu-item-has-children > .item-link {
-      border-right: 1px solid #eee; }
-    .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.menu-item-has-children > .sub-menu-toggler .fa-angle-down {
-      display: inline-block; }
-    .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.menu-item-has-children > .sub-menu-toggler.open {
-      background-color: #FFCDD2; }
-      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.menu-item-has-children > .sub-menu-toggler.open .fa-angle-up {
+        .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu > .menu-item > .item-link {
+          padding-left: 20px; }
+        .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item > .sub-menu > .menu-item > .sub-menu > .menu-item > .item-link {
+          padding-left: 40px; }
+      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.open > .sub-menu {
+        display: block; }
+      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.current-menu-item > .item-link a {
+        color: white;
+        background-color: #EF5350; }
+      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.menu-item-has-children > .item-link {
+        border-right: 1px solid #eee; }
+      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.menu-item-has-children > .sub-menu-toggler .fa-angle-down {
         display: inline-block; }
-      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.menu-item-has-children > .sub-menu-toggler.open .fa-angle-down {
-        display: none; }
+      .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.menu-item-has-children > .sub-menu-toggler.open {
+        background-color: #FFCDD2; }
+        .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.menu-item-has-children > .sub-menu-toggler.open .fa-angle-up {
+          display: inline-block; }
+        .primary-menu-open .primary-menu-wrapper .primary-menu .menu-item.menu-item-has-children > .sub-menu-toggler.open .fa-angle-down {
+          display: none; }
 
 @media (min-width: 768px) {
   .site-name-wrapper {

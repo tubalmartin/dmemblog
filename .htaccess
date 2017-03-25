@@ -1,3 +1,15 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    #RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !\.(css|js)$ [NC]
+    RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+
 # ----------------------------------------------------------------------
 # | Filename-based cache busting                                       |
 # ----------------------------------------------------------------------
@@ -13,5 +25,5 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.+)\.(\d+)\.(bmp|css|cur|gif|ico|jpe?g|js|png|svgz?|webp|webmanifest)$ $1.$3 [L]
+    RewriteRule ^(.+)\.(\d+)\.(css|js)$ $1.$3 [L]
 </IfModule>

@@ -58,6 +58,18 @@ figure {
       color: #FFCDD2;
     }
   }
+  .social-icons {
+    font-size: 20px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    a{
+      margin-left: 10px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
 .primary-menu-wrapper {
   display: none;
@@ -200,6 +212,10 @@ figure {
       a {
         color: $link-color;
       }
+    }
+    .social-icons {
+      font-size: 30px;
+      top: 10px;
     }
   }
   .primary-menu-wrapper {

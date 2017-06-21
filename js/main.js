@@ -1,6 +1,7 @@
 (function(win, $, undefined){ 
-console.log('test')
+
     function Site () {
+        this.a=2
         this.$win = $(win)
         this.$body = $('body')
         this.$primaryMenuWrapper = $('#primary-menu-wrapper')

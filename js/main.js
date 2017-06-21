@@ -1,5 +1,5 @@
 (function(win, $, undefined){ 
-
+console.log('test')
     function Site () {
         this.$win = $(win)
         this.$body = $('body')

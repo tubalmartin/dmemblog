@@ -6,7 +6,7 @@
     "url": "git+https://github.com/tubalmartin/dmemblog.git"
   },
   "scripts": {
-    "precommit": "grunt build-prod && git add scripts.js style.css"
+    "precommit": "./precommit-hook.sh"
   },
   "bugs": {
     "url": "https://github.com/tubalmartin/dmemblog/issues"

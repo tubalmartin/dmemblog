@@ -1,4 +1,4 @@
-(function(win, $, undefined){
+(function(win, $, undefined){ 
 
     function Site () {
         this.$win = $(win)
